@@ -201,10 +201,11 @@ header {
     background-color: #a044ff;
 }
 .conhecimentos {
+    height: 100%;
     display: grid;
     grid-template-columns: repeat(16, 1fr);
     grid-template-rows: repeat(6, 6rem);
-    row-gap: .5rem;
+    row-gap: 0.5rem;
 }
 .conhecimento:nth-child(1) {
     grid-column: 4 / 7;
@@ -232,6 +233,7 @@ header {
 }
 .sessao-conhecimentos {
     background-color: #f5f5f5;
+    height: 100%;
 }
 .sessao-header {
     display: flex;
@@ -265,15 +267,17 @@ header {
 .conhecimentos-img-wrapper {
     grid-column: 7 / 11;
     grid-row: 2 / 6;
-    width: 100%;
+    width: 80%;
+    height: 80%;
 }
 .conhecimentos-img-wrapper img {
     object-fit: cover;
-    width: 100%;
+    height: 100%;
 }
 .projetos {
     display: flex;
     justify-content: space-evenly;
+    margin-bottom: 2rem;
 }
 .card {
     width: 20rem;
@@ -283,19 +287,19 @@ header {
 .card-img-wrapper {
     width: 100%;
     height: 100%;
-    border-radius: .5rem;
+    border-radius: 0.5rem;
     background-color: #262626;
 }
 .card-img-wrapper img {
     object-fit: cover;
     width: 100%;
     height: 100%;
-    border-radius: .5rem;
-    opacity: .8;
-    transition: opacity .3s;
+    border-radius: 0.5rem;
+    opacity: 0.8;
+    transition: opacity 0.3s;
 }
 .card:hover .card-img-wrapper img {
-    opacity: .5;
+    opacity: 0.5;
 }
 .card-info {
     position: absolute;
@@ -303,8 +307,8 @@ header {
     opacity: 0;
     visibility: hidden;
     padding: 2rem;
-    text-shadow: 0.3rem 0.2rem 0.3rem rgba(0, 0, 0, .4);
-    transition: all 1.3s;
+    text-shadow: 0.3rem 0.2rem 0.3rem rgba(0, 0, 0, 0.6);
+    transition: all 0.3s;
 }
 .card-info h2 {
     font-family: var(--font-primary);
@@ -313,7 +317,7 @@ header {
     color: #eeeeee;
 }
 .card-info h3 {
-    font-family: var(--font-secundary);
+    font-family: var(--font-action);
     font-weight: bolder;
     color: #ff4081;
     margin-bottom: 1.5rem;
@@ -325,21 +329,100 @@ header {
     width: 80%;
     margin-bottom: 2rem;
 }
-.card-info button {
-    font-family: var(--font-action);
-    font-size: .8rem;
-    color: #eeeeee;
-    width: 8rem;
-    height: 2.5rem;
+.btn {
     background: #6a3093;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #a044ff, #6a3093);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #a044ff, #6a3093); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    border-radius: .5rem;
+    font-family: var(--font-action);
+    color: #eeeeee;
+    border-radius: 0.5rem;
     border: none;
-    box-shadow: .1rem .8rem rgba(0, 0, 0, .4);
+    box-shadow: .1rem .8rem rgba(0, 0, 0, 0.4);
+    text-transform: uppercase;
+}
+.card-info button {
+    width: 8rem;
+    height: 2.5rem;
 }
 .card:hover .card-info {
     bottom: 2.5rem;
     opacity: 1;
     visibility: visible;
+}
+.sessao-contato {
+    width: 100%;
+    height: 100vh;
+    background-color: #272727;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.contato-wrapper {
+    width: 60%;
+    height: 35rem;
+    display: flex;
+    box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.5);
+}
+.contato-left {
+    width: 35%;
+    background: linear-gradient(rgba(15, 15, 15, 0.6),rgba(22, 22, 22, 0.9)), url(img/contato.jpg);
+    background-size: cover;
+}
+.contato-right {
+    width: 65%;
+    background-color: #eeeeee;
+    padding: 1rem 3rem 3rem 3rem;
+}
+.sessao-contato h1 {
+    width: 100%;
+    text-align: center;
+    font-family: var(--font-primary);
+    color: #272727;
+    font-size: 3rem;
+    font-weight: lighter;
+}
+.sessao-contato form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.input-group {
+    position: relative;
+}
+.field {
+    background: transparent;
+    border: none;
+    width: 20rem;
+    font-size: 1.5rem;
+    font-family: var(--font-secundary);
+    border-bottom: 2px dashed #636363;
+    height: 3rem;
+    outline: none;
+    margin: 2rem 0;
+}
+.input-group textarea {
+    padding-top: 1rem;
+    max-width: 25rem;
+    max-height: 3rem;
+}
+.field-label {
+    position: absolute;
+    left: 0;
+    top: 2rem;
+    font-family: var(--font-secundary);
+    text-transform: uppercase;
+    transition: all 0.3s;
+}
+.field:focus ~ label {
+    top: 0;
+    font-size: 1rem;
+}
+.field:focus {
+    border-bottom: 1px solid;
+}
+.btn-submit {
+    width: 100%;
+    height: 2rem;
+    margin-top: 1rem;
 }
